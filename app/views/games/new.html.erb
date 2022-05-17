@@ -1,0 +1,14 @@
+<h1>New game</h1>
+<div class="letters_displayer">
+  <% @letters.each do |letter| %>
+  <p><%= letter[0] %></p>
+  <% end %>
+</div>
+<br>
+<h2>Enter the longest word you can generate with the above letters below!</h2>
+<form action="score" method="post">
+  <input name="authenticity_token" type="hidden" value="" />
+  <input name="letters" type="hidden" value=<%=@letters.join()%> />
+  <input type="text" name="word">
+  <input type="submit" value="Submit!">
+</form>
